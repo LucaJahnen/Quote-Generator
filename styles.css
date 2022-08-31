@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   display: grid;
-  place-items: ;
+  place-items: center;
   font-family: "Manrope";
   font-weight: 800;
   background-color: hsl(218, 23%, 16%);
@@ -17,7 +17,7 @@ body {
 
 .card {
   width: 90vmin;
-  /*min-height: 90vmin;*/
+  min-height: 90vmin;
   border-radius: 3vmin;
   background-color: hsl(217, 19%, 24%);
   padding: 1.5rem;
@@ -28,8 +28,7 @@ body {
     width: 70vmin;
     min-height: 40vmin;
     padding: 1rem 2rem;
-    outline: 1px solid orange;
-  }
+  } 
 }
 
 .number {
@@ -42,7 +41,7 @@ body {
 }
 
 .quote-wrapper {
-  /*min-height: 40vmin;*/
+  min-height: 40vmin;
   width: 100%;
   display: grid;
   place-items: center;
