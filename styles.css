@@ -28,6 +28,7 @@ body {
     width: 70vmin;
     min-height: 40vmin;
     padding: 1rem 2rem;
+    outline: 1px solid orange;
   }
 }
 
