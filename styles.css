@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   display: grid;
-  place-items: center;
+  place-items: ;
   font-family: "Manrope";
   font-weight: 800;
   background-color: hsl(218, 23%, 16%);
