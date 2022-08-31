@@ -17,7 +17,7 @@ body {
 
 .card {
   width: 90vmin;
-  min-height: 90vmin;
+  min-height: 50vmin;
   border-radius: 3vmin;
   background-color: hsl(217, 19%, 24%);
   padding: 1.5rem;
@@ -27,7 +27,7 @@ body {
   .card {
     width: 70vmin;
     min-height: 40vmin;
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
 }
 
