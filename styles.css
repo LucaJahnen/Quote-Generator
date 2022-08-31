@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Manrope";
+  font-weight: 800;
+  background-color: hsl(218, 23%, 16%);
+}
+
+.card {
+  width: 90vmin;
+  min-height: 90vmin;
+  border-radius: 3vmin;
+  background-color: hsl(217, 19%, 24%);
+  padding: 1.5rem;
+}
+
+@media screen and (min-width: 960px) {
+  .card {
+    width: 70vmin;
+    min-height: 40vmin;
+    padding: 2rem;
+  }
+}
+
+.number {
+  color: hsl(150, 100%, 66%);
+  margin: 0.6rem 0;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
+  overflow: hidden;
+}
+
+.quote-wrapper {
+  min-height: 40vmin;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.6rem;
+}
+
+@media screen and (min-width: 960px) {
+  .quote-wrapper {
+    min-height: 10vmin;
+  }
+}
+
+.quote {
+  font-size: 1.6rem;
+  color: hsl(193, 38%, 86%);
+}
+
+.number, .quote {
+  text-align: center;
+}
+
+.pattern-wrapper {
+  margin: 1.6rem;
+}
+
+.pattern {
+  width: 100%;
+}
+
+.desktop {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .desktop {
+    display: block;
+  }
+  
+  .mobile {
+    display: none;
+  }
+}
+
+.svg-wrapper, .pattern-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.svg-wrapper {
+  transform: translateY(0.8rem);
+}
+
+.dice {
+  rotate: none;
+}
+
+.dice-bg {
+  background-color: hsl(150, 100%, 66%);
+  border-radius: 50%;
+  padding: 1.2rem;
+  margin-top: -2rem;
+  transform: translateY(2rem);
+  transition: box-shadow 0.5s ease;
+}
+
+.dice-bg:hover {
+  box-shadow: 1px 1px 15px 8px hsl(150, 100%, 66%);
+}
