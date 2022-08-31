@@ -17,7 +17,7 @@ body {
 
 .card {
   width: 90vmin;
-  /*min-height: 50vmin;*/
+  min-height: 90vmin;
   border-radius: 3vmin;
   background-color: hsl(217, 19%, 24%);
   padding: 1.5rem;
@@ -41,7 +41,7 @@ body {
 }
 
 .quote-wrapper {
-  min-height: 40vmin;
+  /*min-height: 40vmin;*/
   width: 100%;
   display: grid;
   place-items: center;
