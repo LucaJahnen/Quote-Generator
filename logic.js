@@ -1,24 +1,25 @@
 const button = document.querySelector(".dice-bg");
 const dice = document.querySelector(".dice");
-const quoteP = document.querySelector(".quote");
+const quoteElement = document.querySelector(".quote");
+const counter = document.querySelector(".counter");
 
 const API_URL = "https://api.adviceslip.com/advice";
 
-function get(url) {
-    return fetch(url).then(resp => resp.json())
+const quotes = async () => {
+  const url = "https://api.adviceslip.com/advice";
+  fetch(url).then(response => {
+    if(!response.ok) {
+      throw new Error(response.status)
+    }
+    return response.json()
+  }).then(data => {
+    quoteElement.innerText = '"' + data.slip.advice + '"'
+    counter.innerText = data.slip.id
+  }).catch(error => {
+    console.log(error)
+  })
 }
-
-const API = { get }
-
-function getQuotes() {
-    API.get(API_URL).then(data => addQuote(data['slip']['advice']))
-}
-
-function addQuote(quote) {
-    quoteP.innerText = '"' + quote + '"';
-}
-
-const counter = document.querySelector(".counter");
+quotes()
 
 const tween = gsap.to(".dice", {
   rotate: '360deg',
@@ -27,27 +28,18 @@ const tween = gsap.to(".dice", {
 })
 
 let hide = gsap.set(".counter", {
-            opacity: 0
-        })
+  opacity: 0
+})
 let show = gsap.to(".counter", {
-            opacity: 1
-        })
-
-let count = 0;
-
-function countQuotes() {
-    count++;
-    counter.textContent = count;
-  }
+  opacity: 1
+})
   
 let enabled = true;
-
 button.addEventListener("click", function() {
-  if(enabled === true) {
+  if(enabled) {
     hide.restart();
-    getQuotes();
+    quotes()
     tween.restart();
-    countQuotes();
     show.restart();
   }
   enabled = false;
@@ -58,10 +50,3 @@ function enable() {
 } 
 
 setInterval(enable, 3000);
- 
- window.addEventListener("load", setUp, true);
- 
- function setUp() {
-   countQuotes();
-   getQuotes();
- }

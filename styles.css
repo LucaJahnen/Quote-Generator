@@ -16,9 +16,8 @@ body {
 }
 
 .card {
-  width: 90vmin;
-  min-height: 90vmin;
-  border-radius: 3vmin;
+  width: 45vw;
+  border-radius: 0.9rem;
   background-color: hsl(217, 19%, 24%);
   padding: 1.5rem;
 }
@@ -33,7 +32,7 @@ body {
 
 .number {
   color: hsl(150, 100%, 66%);
-  margin: 0.6rem 0;
+  margin: 1.2rem 0;
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.15rem;
@@ -41,22 +40,17 @@ body {
 }
 
 .quote-wrapper {
-  min-height: 40vmin;
   width: 100%;
   display: grid;
   place-items: center;
   margin-bottom: 0.6rem;
-}
-
-@media screen and (min-width: 960px) {
-  .quote-wrapper {
-    min-height: 10vmin;
-  }
+  padding: 0 2.2rem;
 }
 
 .quote {
   font-size: 1.6rem;
   color: hsl(193, 38%, 86%);
+  line-height: 1.6;
 }
 
 .number, .quote {
@@ -73,16 +67,6 @@ body {
 
 .desktop {
   display: none;
-}
-
-@media screen and (min-width: 960px) {
-  .desktop {
-    display: block;
-  }
-  
-  .mobile {
-    display: none;
-  }
 }
 
 .svg-wrapper, .pattern-wrapper {
@@ -105,8 +89,25 @@ body {
   margin-top: -2rem;
   transform: translateY(2rem);
   transition: box-shadow 0.5s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .dice-bg:hover {
   box-shadow: 1px 1px 15px 8px hsl(150, 100%, 66%);
+}
+
+@media screen and (min-width: 960px) {
+  .desktop {
+    display: block;
+  }
+  
+  .mobile {
+    display: none;
+  }
+
+  .card {
+    width: 37.7vw;
+    padding: 2.6rem 2rem 1rem 2rem;
+  } 
 }
