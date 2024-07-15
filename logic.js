@@ -21,8 +21,8 @@ const getQuote = async () => {
     console.log(error)
   })
 }
-//getQuote()
 
+// animation using gsap
 const tween = gsap.to(".dice", {
   rotate: '360deg',
   duration: 1,
