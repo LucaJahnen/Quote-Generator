@@ -1,5 +1,4 @@
 const button = document.querySelector(".dice-bg");
-const dice = document.querySelector(".dice");
 const quoteElement = document.querySelector(".quote");
 const counter = document.querySelector(".counter");
 
@@ -23,7 +22,7 @@ const getQuote = async () => {
 }
 
 // animation using gsap
-const tween = gsap.to(".dice", {
+const tween = gsap.to(".icon-dice", {
   rotate: '360deg',
   duration: 1,
   ease: 'back.out'

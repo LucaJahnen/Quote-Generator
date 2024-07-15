@@ -18,6 +18,9 @@ body {
   background-color: hsl(217, 19%, 24%);
   padding: 1.5rem;
   transform: translateY(-3rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .number {
@@ -29,42 +32,33 @@ body {
   font-weight: 400;
 }
 
-.quote-wrapper {
-  width: 100%;
-  display: grid;
-  place-items: center;
-  margin-bottom: 0.6rem;
-}
-
 .quote {
   font-size: 1.4rem;
   color: hsl(193, 38%, 86%);
   line-height: 1.4;
   font-weight: 800;
+  margin-bottom: 0.6rem;
 }
 
 .number, .quote {
   text-align: center;
 }
 
-.pattern-wrapper {
-  margin: 1.2rem;
-}
-
 .pattern {
   width: 100%;
+  margin: 1.2rem 0;
 }
 
 .desktop {
   display: none;
 }
 
-.svg-wrapper, .pattern-wrapper {
+.svg-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.dice {
+.icon-dice {
   rotate: none;
 }
 
@@ -72,11 +66,12 @@ body {
   background-color: hsl(150, 100%, 66%);
   border-radius: 50%;
   padding: 1.2rem;
-  margin-top: -2rem;
   transform: translateY(75%);
   transition: box-shadow 0.5s ease;
   border: none;
   cursor: pointer;
+  width: min-content;
+  margin: -2rem auto 0 auto;
 }
 
 @media screen and (min-width: 960px) {
@@ -98,7 +93,7 @@ body {
     font-size: 1.7rem;
   }
 
-  .pattern-wrapper {
+  .pattern {
     margin: 2.4rem 0;
   }
 
