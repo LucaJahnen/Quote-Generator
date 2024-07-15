@@ -3,9 +3,12 @@ const dice = document.querySelector(".dice");
 const quoteElement = document.querySelector(".quote");
 const counter = document.querySelector(".counter");
 
-const API_URL = "https://api.adviceslip.com/advice";
+const displayQuote = (advice, id) => {
+  quoteElement.innerText = '"' + advice + '"'
+  counter.innerText = id
+}
 
-const quotes = async () => {
+const getQuote = async () => {
   const url = "https://api.adviceslip.com/advice";
   fetch(url).then(response => {
     if(!response.ok) {
@@ -13,13 +16,12 @@ const quotes = async () => {
     }
     return response.json()
   }).then(data => {
-    quoteElement.innerText = '"' + data.slip.advice + '"'
-    counter.innerText = data.slip.id
+    displayQuote(data.slip.advice, data.slip.id)
   }).catch(error => {
     console.log(error)
   })
 }
-quotes()
+//getQuote()
 
 const tween = gsap.to(".dice", {
   rotate: '360deg',
@@ -37,16 +39,13 @@ let show = gsap.to(".counter", {
 let enabled = true;
 button.addEventListener("click", function() {
   if(enabled) {
+    getQuote()
     hide.restart();
-    quotes()
     tween.restart();
     show.restart();
   }
   enabled = false;
 }) 
 
-function enable() {
-  enabled = true;
-} 
-
-setInterval(enable, 3000);
+// api caches advice for two seconds
+setInterval(() => enabled = true, 2000);

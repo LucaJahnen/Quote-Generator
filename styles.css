@@ -22,14 +22,6 @@ body {
   padding: 1.5rem;
 }
 
-@media screen and (min-width: 960px) {
-  .card {
-    width: 70vmin;
-    min-height: 40vmin;
-    padding: 1rem 2rem;
-  } 
-}
-
 .number {
   color: hsl(150, 100%, 66%);
   margin: 1.2rem 0;
@@ -93,10 +85,6 @@ body {
   cursor: pointer;
 }
 
-.dice-bg:hover {
-  box-shadow: 1px 1px 15px 8px hsl(150, 100%, 66%);
-}
-
 @media screen and (min-width: 960px) {
   .desktop {
     display: block;
@@ -109,5 +97,10 @@ body {
   .card {
     width: 37.7vw;
     padding: 2.6rem 2rem 1rem 2rem;
-  } 
+  }
+
+  .dice-bg:hover, .dice-bg:focus-visible {
+    box-shadow: 1px 1px 15px 8px hsl(150, 100%, 66%);
+    outline: none;
+  }
 }
